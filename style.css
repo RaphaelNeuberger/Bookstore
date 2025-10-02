@@ -25,12 +25,22 @@ body {
   height: 100%;
 }
 
+h1 {
+  text-align: center;
+}
+
 header {
   display: flex;
   align-items: center;
   height: 50px;
   background-color: #012534;
   color: white;
+}
+
+.books {
+  background-color: white;
+  color: #012534;
+  max-width: 3auto;
 }
 
 footer {
