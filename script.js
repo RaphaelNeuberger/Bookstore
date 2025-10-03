@@ -6,13 +6,11 @@ function renderBooks() {
     books_container.innerHTML += booksTemplate(renderIndex);
   }
 
-  if  let renderIndex = [] 
-
-  
-
   console.log(books);
 }
 
 
-function noComments (index)
- 
+function noComments(){
+  const comments >= ${books[index].comments[0].comment[]}
+
+}
