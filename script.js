@@ -10,10 +10,11 @@ function renderBooks() {
 }
 
 function getComments(index) {
+  heartButtonElement = document.getElementById(`heart${index}`);
   let content = "";
   for (let i = 0; i < books[index].comments.length; i++) {
     let comment = books[index].comments[i];
-    content += getCommentsTemplate(comment);
+    content += getCommentsTemplate(books[index].comments[i]);
   }
 
   return content;
@@ -24,4 +25,19 @@ function getCommentsTemplate(comment) {
           <td>${comment.name}:</td>
           <td>${comment.comment}</td>
           </tr>;`;
+}
+
+function likes(i) {
+  heartButtonElement = document.getElementById(`heart${i}`);
+  //Schauen, ob das Buch schon gelike wurde
+  console.log(books[i].liked);
+  let isLiked = books[i].liked;
+
+  if (isLiked) {
+    // Herz rot machen
+    console.log(heartButtonElement.src);
+    heartButtonElement.src = "./assets/icons/heart.png";
+  } else {
+    heartButtonElement.src = "./assets/icons/heart2.png";
+  }
 }

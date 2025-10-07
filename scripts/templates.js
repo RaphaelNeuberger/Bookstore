@@ -8,9 +8,11 @@ function booksTemplate(index) {
         <a href=""></a>
         
         <table>
-          <tr>
+          <<tr>
             <th>${books[index].price}€</th>
-            <th>${books[index].likes} ${books[index].liked}</th>
+            <th>${books[index].likes} ${
+    books[index].liked
+  } <img class="heart" id="heart${index}" onclick="likes(${index})" src="./assets/icons/${index}"></th>
 
           </tr>
           <tr>
@@ -29,6 +31,8 @@ function booksTemplate(index) {
             </td>
 
           </tr>
+
+
 
           ${getComments(index)}
          
