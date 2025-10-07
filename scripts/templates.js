@@ -29,11 +29,9 @@ function booksTemplate(index) {
             </td>
 
           </tr>
-          <tr>
-            <td>${books[index].comments[0].name}:</td>
-            <td>${books[index].comments[0].comment}</td>
 
-          </tr>
+          ${getComments(index)}
+         
         </table>
 
 

@@ -9,8 +9,19 @@ function renderBooks() {
   console.log(books);
 }
 
+function getComments(index) {
+  let content = "";
+  for (let i = 0; i < books[index].comments.length; i++) {
+    let comment = books[index].comments[i];
+    content += getCommentsTemplate(comment);
+  }
 
-function noComments(){
-  const comments >= ${books[index].comments[0].comment[]}
+  return content;
+}
 
+function getCommentsTemplate(comment) {
+  return `<tr>
+          <td>${comment.name}:</td>
+          <td>${comment.comment}</td>
+          </tr>;`;
 }
