@@ -1,50 +1,27 @@
-html {
+html, body {
   height: 100%;
-}
-
-link {
-}
-
-button {
-}
-
-image {
-}
-
-body {
-  font-family: ;
   margin: 0;
-  font-family: "Roboto", sans-serif;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
   background-color: #011a26;
   color: white;
   display: grid;
   grid-template-rows: auto 1fr auto;
-  gap: 1px;
-  height: 100%;
 }
 
 h1 {
   text-align: center;
+  margin: 20px 0;
 }
 
 header {
   display: flex;
   align-items: center;
   height: 50px;
+  padding: 0 20px;
   background-color: #012534;
   color: white;
-}
-
-.books {
-  background-color: white;
-  color: #012534;
-  max-width: 3auto;
-}
-
-.heart {
-  height: 30px;
 }
 
 footer {
@@ -53,54 +30,79 @@ footer {
   justify-content: space-around;
   align-items: center;
   padding: 10px;
-  color: white;
   background-color: #012534;
 }
 
+/* Bücher-Karten */
+.books {
+  background-color: #fff;
+  color: #012534;
+  max-width: 650px;
+  margin: 10px auto;
+  padding: 16px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.books:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+}
+
+/* Herz-Icon */
+.heart {
+  height: 30px;
+  cursor: pointer;
+  vertical-align: middle;
+  transition: transform 0.2s;
+}
+
+.heart:hover {
+  transform: scale(1.2);
+}
+
+/* Kommentarbereich */
+.comment-input {
+  display: flex;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.comment-input input {
+  flex: 1;
+  padding: 6px 10px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 0.95rem;
+}
+
+.comment-input button {
+  padding: 6px 12px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.comment-input button:hover {
+  background-color: #0056b3;
+}
+
+/* Padding/Gaps für Sections (Responsiv) */
 .section_pad {
   padding: 32px 64px;
 }
 .section_gap {
   gap: 16px;
 }
+
 @media screen and (max-width: 480px) {
-  .section_pad {
-    padding: 16px 32px;
-  }
-  .section_gap {
-    gap: 16px;
-  }
+  .section_pad { padding: 16px 32px; }
+  .section_gap { gap: 16px; }
 }
 @media screen and (max-width: 1024px) and (min-width: 481px) {
-  .section_pad {
-    padding: 32px 64px;
-  }
-  .section_gap {
-    gap: 32px;
-  }
-}
-@media screen and (max-width: 1440px) and (min-width: 1025px) {
-  .section_pad {
-    padding: 64px 128px;
-  }
-  .section_gap {
-    gap: 64px;
-  }
-}
-@media screen and (max-width: 1920px) and (min-width: 1441px) {
-  .section_pad {
-    padding: 64px 160px;
-  }
-  .section_gap {
-    gap: 64px;
-  }
-}
-@media screen and (min-width: 1921px) {
-  .section_pad {
-    /* calculation: (100% - 1920px)/2 = 50% - 960px */
-    padding: 64px max(160px, calc(50% - 960px));
-  }
-  .section_gap {
-    gap: 64px;
-  }
-}
+  .section_pad { padding: 32px 64px; }
+  .section_g_
